@@ -1,27 +1,18 @@
 const arrayStepper = (nums, i = 0, memo = {}) => {
   // todo
-  if(i === nums.length - 1) return true;
+  if(i in memo) return memo[i];
   
-  if(nums[i] === 0) return false;
+  if(i >= nums.length - 1) return true;
   
-  let destination = nums.length - 1;
-  
-  let max = 0;
-  
-  while(i < nums.length){
-        max = Math.max(max, i + nums[i]);
-​
-        if(max >= destination){
-            return true;
-        }
-​
-        if(max <= i && nums[i] === 0){
-            return false
-        }
-​
-        i++;
+  const maxStep = nums[i];
+  for(let step = 1; step <= maxStep; step++){
+    if(arrayStepper(nums, i + step, memo) === true){
+      memo[i] = true;
+      return true;
     }
-    return false;
+  }
+  memo[i] = false;
+  return false;
 };
 ​
 module.exports = {
