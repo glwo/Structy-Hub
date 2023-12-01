@@ -15,8 +15,6 @@ std::string uncompress(std::string s) {
       r++;
     }
     
-    std::cout << num << std::endl;
-    
     int currInt = std::stoi(num);
     for(int i = 0; i < currInt; i++){
       newStr += s[r];
