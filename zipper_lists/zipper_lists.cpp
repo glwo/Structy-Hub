@@ -16,16 +16,16 @@ class Node {
 Node* zipperLists(Node* head1, Node* head2) {
   // todo
   Node* head = head1;
-  int count = 1;
   Node* tail = head;
   Node* curr1 = head1->next;
   Node* curr2 = head2;
+  int count = 1;
   
   while(curr1 != nullptr && curr2 != nullptr){
     if(count % 2 == 0){
       tail->next = curr1;
       curr1 = curr1->next;
-    } else{
+    } else {
       tail->next = curr2;
       curr2 = curr2->next;
     }
@@ -35,7 +35,6 @@ Node* zipperLists(Node* head1, Node* head2) {
   if(curr1 != nullptr){
     tail->next = curr1;
   }
-  
   if(curr2 != nullptr){
     tail->next = curr2;
   }
