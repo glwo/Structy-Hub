@@ -1,27 +1,3 @@
-​
-class Node {
-  public:
-    std::string val;
-    Node* left;
-    Node* right;
-​
-​
-    Node(std::string initialVal) {
-      val = initialVal;
-      left = nullptr;
-      right = nullptr;
-    }
-};
-​
-​
-​
-#include <vector>
-#include <string>
-#include <algorithm>
-​
-std::vector<std::string>* _pathFinder(Node* root, std::string targetVal) {
-  if (root == nullptr) {
-    return nullptr;
   }
   if (root->val == targetVal) {
     return new std::vector<std::string>({ root->val });
